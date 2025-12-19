@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>টিকিট বুকিং সিস্টেম</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="login-page" class="auth-page">
+        <div class="auth-left">
+            <div class="auth-graphic">
+                <div class="auth-graphic-icon">
+                    <i class="fas fa-ticket-alt"></i>
+                </div>
+                <h1>টিকিটহাব বাংলাদেশ</h1>
+                <p>আপনার প্রিয় ইভেন্টের টিকিট বুক করুন সহজেই। বাংলাদেশের সবচেয়ে বিশ্বস্ত টিকিট বুকিং সিস্টেম।</p>
+                <div class="auth-features">
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>নিরাপদ লেনদেন</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-bolt"></i>
+                        <span>দ্রুত বুকিং</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>মোবাইল টিকিট</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-headset"></i>
+                        <span>২৪/৭ সহায়তা</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="auth-right">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h1>স্বাগতম</h1>
+                        <p>আপনার অ্যাকাউন্টে লগইন করুন</p>
+                    </div>
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> ইমেইল অ্যাড্রেস</label>
+                            <input type="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-lock"></i> পাসওয়ার্ড</label>
+                            <input type="password" name="password" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span>লগইন করুন</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <div class="demo-credentials">
+                            <i class="fas fa-info-circle"></i>
+                            <span>ডেমো: <strong>admin@tickets.com</strong> / <strong>admin123</strong></span>
+                        </div>
+                    </form>
+                    <div class="auth-footer">
+                        <p>নতুন ব্যবহারকারী? <a href="#" id="show-register">অ্যাকাউন্ট তৈরি করুন</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Page -->
+    <div id="register-page" class="auth-page" style="display: none;">
+        <div class="auth-left">
+            <div class="auth-graphic">
+                <div class="auth-graphic-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h1>যোগ দিন আমাদের সাথে</h1>
+                <p>হাজারো ইভেন্ট, কনসার্ট এবং শো-এর টিকিট পান এখনই। নিবন্ধন করুন বিনামূল্যে।</p>
+                <div class="auth-features">
+                    <div class="feature-item">
+                        <i class="fas fa-gift"></i>
+                        <span>বিশেষ অফার</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-bell"></i>
+                        <span>ইভেন্ট আপডেট</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>সহজ টিকিট</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-star"></i>
+                        <span>পয়েন্ট রিওয়ার্ড</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="auth-right">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h1>নিবন্ধন করুন</h1>
+                        <p>একটি নতুন অ্যাকাউন্ট তৈরি করুন</p>
+                    </div>
+                    <form id="register-form" class="auth-form">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> পূর্ণ নাম</label>
+                            <input type="text" name="name" placeholder="আপনার নাম" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-envelope"></i> ইমেইল অ্যাড্রেস</label>
+                            <input type="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-lock"></i> পাসওয়ার্ড</label>
+                            <input type="password" name="password" placeholder="••••••••" required minlength="6">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-lock"></i> পাসওয়ার্ড নিশ্চিত করুন</label>
+                            <input type="password" name="confirmPassword" placeholder="••••••••" required minlength="6">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span>অ্যাকাউন্ট তৈরি করুন</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                    <div class="auth-footer">
+                        <p>ইতিমধ্যে অ্যাকাউন্ট আছে? <a href="#" id="show-login">লগইন করুন</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="main-app" class="container" style="display: none;">
+        <nav class="top-navbar">
+            <div class="navbar-container">
+                <div class="navbar-brand">
+                    <i class="fas fa-ticket-alt"></i>
+                    <span>টিকিটহাব</span>
+                </div>
+                <div class="navbar-menu">
+                    <a href="#" class="nav-item active" data-section="dashboard">
+                        <i class="fas fa-chart-line"></i>
+                        <span>ড্যাশবোর্ড</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="events">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>ইভেন্ট</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="tickets">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>টিকিট</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="customers">
+                        <i class="fas fa-users"></i>
+                        <span>গ্রাহক</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="organizers">
+                        <i class="fas fa-user-tie"></i>
+                        <span>আয়োজক</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="venues">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>স্থান</span>
+                    </a>
+                </div>
+                <div class="navbar-user">
+                    <div class="user-profile">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="current-user-name">অ্যাডমিন</span>
+                    </div>
+                    <button class="btn-logout" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <h1 id="section-title">ড্যাশবোর্ড</h1>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <div class="stats-grid">
+                    <div class="stat-card stat-purple">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p>মোট ইভেন্ট</p>
+                            <h3 id="total-events">0</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-pink">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p>উপলব্ধ ইভেন্ট</p>
+                            <h3 id="available-events">0</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-blue">
+                        <div class="stat-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p>মোট টিকিট</p>
+                            <h3 id="total-tickets">0</h3>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-orange">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p>মোট গ্রাহক</p>
+                            <h3 id="total-customers">0</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-content">
+                    <div class="charts-grid">
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3><i class="fas fa-chart-pie"></i> ইভেন্ট স্ট্যাটাস</h3>
+                                <span class="chart-subtitle">ইভেন্টের উপলব্ধতার সংক্ষিপ্ত বিবরণ</span>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="eventChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3><i class="fas fa-chart-line"></i> টিকিট স্ট্যাটাস</h3>
+                                <span class="chart-subtitle">বুকিং স্ট্যাটাসের বিস্তারিত</span>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="ticketChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recent-bookings">
+                        <div class="recent-header">
+                            <h2><i class="fas fa-clock"></i> সাম্প্রতিক টিকিট</h2>
+                            <button class="btn btn-secondary btn-small">সব দেখুন</button>
+                        </div>
+                        <div id="recent-tickets-list" class="table-container"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Events Section -->
+            <section id="events" class="section">
+                <div class="section-header">
+                    <button class="btn btn-primary" id="add-event-btn">
+                        <i class="fas fa-plus"></i> ইভেন্ট যোগ করুন
+                    </button>
+                </div>
+                <div id="events-list" class="table-container"></div>
+            </section>
+
+            <!-- Tickets Section -->
+            <section id="tickets" class="section">
+                <div class="section-header">
+                    <button class="btn btn-primary" id="add-ticket-btn">
+                        <i class="fas fa-plus"></i> টিকিট যোগ করুন
+                    </button>
+                </div>
+                <div id="tickets-list" class="table-container"></div>
+            </section>
+
+            <!-- Customers Section -->
+            <section id="customers" class="section">
+                <div class="section-header">
+                    <button class="btn btn-primary" id="add-customer-btn">
+                        <i class="fas fa-plus"></i> গ্রাহক যোগ করুন
+                    </button>
+                </div>
+                <div id="customers-list" class="table-container"></div>
+            </section>
+
+            <!-- Organizers Section -->
+            <section id="organizers" class="section">
+                <div class="section-header">
+                    <button class="btn btn-primary" id="add-organizer-btn">
+                        <i class="fas fa-plus"></i> আয়োজক যোগ করুন
+                    </button>
+                </div>
+                <div id="organizers-list" class="table-container"></div>
+            </section>
+
+            <!-- Venues Section -->
+            <section id="venues" class="section">
+                <div class="section-header">
+                    <button class="btn btn-primary" id="add-venue-btn">
+                        <i class="fas fa-plus"></i> স্থান যোগ করুন
+                    </button>
+                </div>
+                <div id="venues-list" class="table-container"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">আইটেম যোগ করুন</h2>
+                <button class="close-btn" id="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
